@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/userss.css">
+
+	<title>artist</title>
+</head>
+<body>
+<!-- header -->
+<header>
+  
+
+  <nav class="navbar navbar-dark bg-dark" >
+    <a class="navbar-brand" href="#">M&M mehdii</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">about as</a>
+        <a class="nav-item nav-link" href="#">contact</a>
+        <a class="nav-item nav-link disabled" href="#">Services</a>
+      </div>
+    </div>
+  </nav>
+    
+</header>
+
+
+
+   <!--  form add-->
+   
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+   <form action="/home"  method="post" >
+   <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Ajouter un nouvel utilisateur</h5>
+    </div>
+    <div class="modal-body">
+      <div class="txt">
+        <input type="text" class="form-control" name="Nom" id="validationServer02" placeholder="Nom et Prenom" required>
+        <input type="text" name="Email" class="form-control" id="validationServer04" placeholder="Email" required>
+        <input type="text" name="role" class="form-control" id="validationServer04" placeholder="Le role" required>
+        <input type="text" name="Identifiant" class="form-control" id="validationServer04" placeholder="Identifiant" required>
+        <input type="text" name="Mdp" class="form-control" id="validationServer04" placeholder="Le Mot de passe" required>
+      </div><br />
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn btn-dark">Ajouter</button>
+    </div>
+  </div>
+</div>
+</div>
+</form>
+  
+</div>
+ <!--  form card -->
+ <div class="container-fluid">
+ 	
+  <a href="#" class="btn btn btn-dark" data-toggle="modal"
+  data-target="#exampleModalCenter"><b>+</b> Ajouter un nouvel utilisateur</a>
+           <br>
+      <div class="row mb-5">
+      
+         <%if (json.length > 0) {%>
+         <%for(i in json) {%>
+              
+          <div class="col-md-4" >
+          	<div class="card-box">
+               	
+             
+                   
+               <div class="card-body">
+                 <p>Nom : <span class="card-title align-center" ><%= json[i].Nom%></span></p>
+                 <p>Email: <span class="card-text align-center"><%= json[i].Email%></span></p>
+                 <p>LE Role: <span class="card-text align-center"><%= json[i].role%></span></p>
+                 <p>Identifiant: <span class="card-text align-center"><%= json[i].Identifiant%></span></p>
+                 <p>Le mot de passe: <span class="card-text align-center"><%= json[i].Mdp%></span></p>
+          
+                 <a href="/delete/<%= json[i].id %>" class="btn btn-light"> Delete </a>
+                 <button class="btn btn btn-dark" data-toggle="modal" data-target="#myModal" id="rvn" onclick="get(this)" name="<%= json[i].id %>" > Edit </button>
+                </div>
+                                        
+            </div>
+         </div>
+              <%}%>
+               
+              <%}%>
+              
+      </div>
+   </div>
+ <!--  update -->
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+     
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">Edit utlisateur</h1>
+          <button type="button" class="close" data-dismiss="modal">fermer</button>
+        </div>
+        
+        <!-- Modal body add-->
+        <div class="modal-body">
+           <form action="/up" method="post">
+              <div class="form-group">
+                <input type="hidden" id="vv" name="id" value="" >
+                  <label for="exampleInputPassword1">Nom et Prenom</label>
+                  <input class="form-control" class="form-control is-valid" name="Nom" id="title" required="on">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input class="form-control" class="form-control is-valid" name="Email" id="title" required="on">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Le Role </label>
+              <input class="form-control" class="form-control is-valid" name="role" id="title" required="on">
+          </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Identifiant</label>
+                <input class="form-control" class="form-control is-valid" name="Identifiant"id="title" required="on">
+            </div>
+                
+              <div class="form-group">
+                 <label for="exampleInputPassword1">Le mot de passe</label>
+                 <input class="form-control" class="form-control is-valid" name="Mdp" id="title" required="on">
+              </div>
+               <button id="button-edit" type="submit" class="btn btn btn-dark">submit</button>
+      </div>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+
+        
+<script>
+	
+  var cc = document.getElementById("vv");
+    function get(ev) {
+let bn = ev.name;
+console.log(bn);
+    
+     cc.value = bn;
+    
+}
+</script>
+
+
+
+
+
+<!-- Footer -->
+
+<footer>
+  <div class="footer" id="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <h4> ELMEHDI ABOULOUALID </h4>
+              </div>
+              <div class="col-lg-3 col-sm-2 col-xs-3">
+                  <h3> Contact </h3>
+                  <ul>
+                      <li><a class="email"href="#"> abouloualidelmehdigmail.com </a></li>
+                      <br/>
+                      <li> <p> 00212658662735 </p> </li>
+                      <li> <p> Safi maroc </p> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-3 col-sm-2 col-xs-3">
+                  <ul>
+                      <li> <h5> <a href="#" style="margin-top: 2em"> ABOUT US</a> <h5></li>
+                      <li> <h5><a href="#"> CURRENT SERIES </a> <h5></li>
+                      <li> <h5><a href="#"> THE HOUSE </a> <h5></li>
+                      <li> <h5><a href="#"> LOOKING BACK </a> <h5></li>
+                  </ul>
+              </div>
+             
+          <!--/.row--> 
+      </div>
+      <!--/.container--> 
+  </div>
+  <!--/.footer-->
+                        
+  <div class="footer-bottom">
+      <div class="container">
+          <p class="pull-left copyright"> Copyright © Footer. All right reserved. </p>
+     
+      </div>
+  </div>
+  <!--/.footer-bottom--> 
+
+</footer>
+<!-- Footer -->
+</body>
+</html>

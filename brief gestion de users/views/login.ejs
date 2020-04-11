@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>User Login</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/loginn.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    
+</head>
+
+<body>
+  <!-- header -->
+ 
+  
+
+  <nav class="navbar navbar-dark bg-dark" >
+    <a class="navbar-brand" href="#">M&M mehdii</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">about as</a>
+        <a class="nav-item nav-link" href="#">contact</a>
+        <a class="nav-item nav-link disabled" href="#">Services</a>
+      </div>
+    </div>
+  </nav>
+    
+
+    <!-- Slide Background -->
+    <div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+              <!-- Slide One - Set the background image for this slide in the line below -->
+              <div id="Back1" class="carousel-item active">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h2 class="display-4">la gestion des users </h2>
+                      <p class="lead">   Pour gérer les utilisateurs de l'entreprise</p>
+                  </div>
+              </div>
+              <!-- Slide Two - Set the background image for this slide in the line below -->
+              <div id="Back2" class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h2 class="display-4">la gestion des users</h2>
+                      <p class="lead">Pour gérer les utilisateurs de l'entreprise</p>
+                  </div>
+              </div>
+              <!-- Slide Two - Set the background image for this slide in the line below -->
+              <div id="Back4" class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="display-4">la gestion des users</h2>
+                    <p class="lead">Pour gérer les utilisateurs de l'entreprise</p>
+                </div>
+            </div>
+              <!-- Slide Three - Set the background image for this slide in the line below -->
+              <div id="Back3" class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h2 class="display-4">la gestion des users </h2>
+                      <p class="lead">Pour gérer les utilisateurs de l'entreprise</p>
+                  </div>
+              </div>
+
+          </div>
+
+
+
+
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Précédent</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">suivant</span>
+          </a>
+      </div>
+      <div class="HeaderTitle">
+          <h1 class="display-4">Bienvenu</h1>
+          <h2 class="display-4" id="userName" style="text-align: center;"></h2>
+      </div>
+    </div>
+
+
+<div class="wrapper">
+  <div  id="formContent">
+    <div >
+      <form class="login100-form validate-form" action="/login" method="post">
+        <div class="fadeIn first">
+          <img src="Images/img.png" id="icon" alt="User Icon"/>
+        </div>
+        
+        
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <input class="input100" type="text" id="name" class="fadeIn second" name="username">
+        
+        </div>
+        
+        
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+          <input class="input100" type="password" id="pass" class="fadeIn third" name="password">
+        
+        </div>
+
+        </div>
+    
+
+        <div class="btn-Log">
+          <input class="fadeIn fourth" type="submit" id="but_submit" value="Log In"> 
+        </div>
+      
+
+      </form>
+
+      <div id="formFooter">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+
+<footer>
+  <div class="footer" id="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <h4> ELMEHDI ABOULOUALID </h4>
+              </div>
+              <div class="col-lg-3 col-sm-2 col-xs-3">
+                  <h3> Contact </h3>
+                  <ul>
+                      <li><a class="email"href="#"> abouloualidelmehdigmail.com </a></li>
+                      <br/>
+                      <li> <p> 00212658662735 </p> </li>
+                      <li> <p> Safi maroc </p> </li>
+                  </ul>
+              </div>
+              <div class="col-lg-3 col-sm-2 col-xs-3">
+                  <ul>
+                      <li> <h5> <a href="#" style="margin-top: 2em"> ABOUT US</a> <h5></li>
+                      <li> <h5><a href="#"> CURRENT SERIES </a> <h5></li>
+                      <li> <h5><a href="#"> THE HOUSE </a> <h5></li>
+                      <li> <h5><a href="#"> LOOKING BACK </a> <h5></li>
+                  </ul>
+              </div>
+             
+          <!--/.row--> 
+      </div>
+      <!--/.container--> 
+  </div>
+  <!--/.footer-->
+                        
+  <div class="footer-bottom">
+      <div class="container">
+          <p class="pull-left copyright"> Copyright © Footer. All right reserved. </p>
+     
+      </div>
+  </div>
+  <!--/.footer-bottom--> 
+
+</footer>
+<!-- Footer -->
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script src="js/loginn.js"></script>
+</body>
+
+</html>
