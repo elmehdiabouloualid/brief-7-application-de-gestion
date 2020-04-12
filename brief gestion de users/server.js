@@ -5,7 +5,7 @@ const fs = require('fs');
 const ejs = require('ejs');
 const cors = require('cors');
 const app = express();
-var opn= require('opn');
+
 
 app.set('view engine' , 'ejs');
 app.set('views', path.join(__dirname, 'views')); //default 'views'
@@ -26,4 +26,4 @@ module.exports = app;
 
 
 app.listen(3000, () => console.log('listening on port ...'));
-opn("http://localhost:3000")
+//"http://localhost:3000"
