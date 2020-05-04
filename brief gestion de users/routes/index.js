@@ -3,12 +3,12 @@ const fs = require('fs');
 const router = express.Router();
 
 
-   const  data = fs.readFileSync('./data/users.json');
-let json = JSON.parse(data);
+  const  data = fs.readFileSync('./data/users.json');
+  let json = JSON.parse(data);
 
 
- const  da = fs.readFileSync('./data/logiin.json');
-let js = JSON.parse(da);
+ const  data1 = fs.readFileSync('./data/logiin.json');
+ let Dlogin = JSON.parse(data1);
 
 
 
@@ -20,15 +20,15 @@ router.get('/', (req, res) => {
   
   res.render('login',{json});
 });
-
+// PARTIE LOGIIN
 router.post('/login', (req, res) => {
   
-       const us = req.body.username;
-       console.log(us)
-       const ps = req.body.password;
-      for (let i = 0; i < js.length; i++) {
+       const user = req.body.username;
+       console.log(user)
+       const psw = req.body.password;
+      for (let i = 0; i < Dlogin.length; i++) {
       
-              if (js[i].username == us && js[i].password == ps) {
+              if (Dlogin[i].username == user && Dlogin[i].password == psw) {
 
                  res.redirect("/home")
                   
@@ -41,7 +41,9 @@ router.post('/login', (req, res) => {
 });
 
 
+// PARTIE HOME
 
+// ----------Ajouter---------------
 
 router.post('/home', (req, res) => {
   
@@ -49,7 +51,7 @@ router.post('/home', (req, res) => {
   const { Nom, Email, role, Identifiant,Mdp } = req.body;
 
   
-  let newprod = {
+  let newproduit = {
     id:json.length + 1,
     Nom,
     Email,
@@ -60,50 +62,50 @@ router.post('/home', (req, res) => {
   };
 
 
-  json.push(newprod);
+  json.push(newproduit);
 
      
 
   // saving the array in a file
   const data = JSON.stringify(json);
   fs.writeFileSync('./data/users.json', data, 'utf-8');
-    
-
   res.redirect('/home');
 });
 
 
   // ----------delete---------------
 router.get('/delete/:id', (req, res) => {
-  json = json.filter(d => d.id != req.params.id);
+  json = json.filter(Userr => Userr.id != req.params.id);
 
   // saving data
   const data = JSON.stringify(json);
   fs.writeFileSync('./data/users.json', data, 'utf-8');
-
   res.redirect('/home')
   }); //---end
 
 
   // -------Update-----------
-   router.post('/up', (req, res) => {
-    console.log(req.body, req.params)
+   router.post('/update', (req, res) => {
     const { id } = req.body;
     const { Nom,Email,role,Identifiant,Mdp } = req.body;
 
-  json.forEach((pro) => {
-    if (pro.id == id) {
-        pro.Nom = Nom;
-        pro.Email = Email;
-        pro.role = role;
-        pro.Identifiant = Identifiant;
-        pro.Mdp = Mdp;
+  json.forEach((produit) => {
+    if (produit.id == id) {
+        produit.Nom = Nom;
+        produit.Email = Email;
+        produit.role = role;
+        produit.Identifiant = Identifiant;
+        produit.Mdp = Mdp;
 
     }
   });
-  res.redirect('/home');
+  const data = JSON.stringify(json);
+  fs.writeFileSync('./data/users.json', data, 'utf-8');
+  res.redirect('/home')
+  });
+   //---end
 
-}); //end--------
+
 module.exports = router;
 
 
